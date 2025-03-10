@@ -9,9 +9,6 @@ public class FollowPlayer : MonoBehaviour
     public GameObject player;
     private Vector3 offset = new Vector3(0, 5, -7);
 
-    private Camera Cam1;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +23,19 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-            gameObject.SetActive(false);
-
+            offset = new Vector3(0, 2, 1);
         }
-        else 
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            offset = new Vector3(0, 5, -7);
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            offset = new Vector3(0, 5, -15);
+        }
     }
 }
